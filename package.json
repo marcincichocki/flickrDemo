@@ -1,0 +1,47 @@
+{
+  "name": "flickrDemo",
+  "version": "0.0.0",
+  "description": "Check how well you know champions' splash arts!",
+  "scripts": {
+    "start": "webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --history-api-fallback",
+    "build:prod": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
+    "start:prod": "npm run build:prod && http-server -p 8080 -o"
+  },
+  "author": "Marcin Cichocki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcincichocki/flickrDemo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcincichocki/flickrDemo/issues"
+  },
+  "homepage": "https://github.com/marcincichocki/flickrDemo",
+  "dependencies": {
+    "angular2": "2.0.0-beta.0",
+    "bootstrap": "^4.0.0-alpha.2",
+    "bootstrap-loader": "^1.0.5",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "file-loader": "^0.8.5",
+    "jquery": "^2.2.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.10"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "css-loader": "^0.23.1",
+    "http-server": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "resolve-url-loader": "^1.4.3",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.5",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
