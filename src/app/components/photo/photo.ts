@@ -7,4 +7,7 @@ import {Component, Input} from 'angular2/core';
 })
 export class PhotoComponent {
   @Input() photo;
+  @Input() index;
+
+  private noDescription: string = 'No description provided.'
 }

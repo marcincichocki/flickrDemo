@@ -1,5 +1,6 @@
-<div class="col-xs-6"
-  *ngFor="#photo of ds.photos"
+<div class="col-xs-6 card-deck"
+  *ngFor="#photo of ds.photos, #index = index"
   [photo]="photo"
+  [index]="index"
   photo-component>
 </div>
