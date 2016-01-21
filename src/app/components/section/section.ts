@@ -12,4 +12,18 @@ import {PhotosComponent} from '../photos/photos';
 })
 export class SectionComponent {
   constructor(private ds: DataService) { }
+
+
+
+  nextPage() {
+    if (this.ds.activePage < this.ds.maxPage) {
+      this.ds.next.emit(this.ds.activePage + 1);
+    }
+  }
+
+  prevPage() {
+    if (this.ds.activePage > 1) {
+      this.ds.prev.emit(this.ds.activePage - 1);
+    }
+  }
 }

@@ -1,5 +1,13 @@
-<div class="row">
-  <div class="col-xs-12" *ngIf="ds.photos.length">
+<div class="row" *ngIf="ds.photos.length">
+  <div class="col-xs-12">
     <div class="row" photos-component></div>
+  </div>
+  <div class="col-xs-12">
+    <nav>
+      <ul class="pager">
+        <li><a (click)="prevPage()" href="#">Previous</a></li>
+        <li><a (click)="nextPage()" href="#">Next</a></li>
+      </ul>
+    </nav>
   </div>
 </div>

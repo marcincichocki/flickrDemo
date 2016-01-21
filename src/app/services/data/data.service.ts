@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable, EventEmitter} from 'angular2/core';
 import {Http, Response} from 'angular2/http';
 import {Observable} from 'rxjs/Rx';
 
@@ -7,6 +7,10 @@ import {Query} from './Query';
 
 @Injectable()
 export class DataService {
+
+  // Emit when page is changed.
+  public next: EventEmitter<number> = new EventEmitter();
+  public prev: EventEmitter<number> = new EventEmitter();
 
   // Api key.
   private API_KEY: string = 'e794f772ea891c930ef219cc3b24ce15';
@@ -43,7 +47,7 @@ export class DataService {
    */
   private url(query: Query): string {
     let url = `${this.endpoint}?method=flickr.photos.search` +
-      `&api_key=${this.API_KEY}&format=json&per_page=${this.perPage}&nojsoncallback=1`;
+      `&api_key=${this.API_KEY}&format=json&per_page=${this.perPage}&nojsoncallback=1&radius=30`;
 
     // Extend url with optional parametrs.
     if (query.text) url += `&text=${query.text}`;

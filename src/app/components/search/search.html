@@ -1,8 +1,22 @@
 <form class="form-inline" (ngSubmit)="onSubmit()">
   <input class="form-control" type="text" placeholder="#tag, #tag2, text..."
     [(ngModel)]="model.query">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" [(ngModel)]="model.nearMe" (change)="onChange()"> Only photos around me
+    </label>
+  </div>
   <button class="btn btn btn-primary" type="submit">Search</button>
 </form>
 
 <!-- spy, remove this later -->
 {{ model.query }}
+{{ model.nearMe }}
+
+
+---
+
+<p>text: {{ text }}</p>
+<p>tags {{ tags }}</p>
+<p>lon {{ lon }}</p>
+<p>lat {{ lat }}</p>
