@@ -3,14 +3,16 @@ var path = require('path');
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 var DefinePlugin = require('webpack/lib/DefinePlugin');
 var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+var DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 
 var autoprefixer = require('autoprefixer');
 
 
 
 module.exports = {
-  debug: true,
-  devtool: 'eval',
+  debug: false,
+  devtool: 'source-map',
   entry: {
     vendor: './src/app/vendor',
     app: './src/app/bootstrap'
