@@ -4,3 +4,6 @@ npm-debug.log
 
 # transpiled files
 dist/
+
+# flickr api key
+src/data/.api

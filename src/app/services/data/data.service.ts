@@ -12,7 +12,7 @@ export class DataService {
   public changePage: EventEmitter<number> = new EventEmitter();
 
   // Api key.
-  private API_KEY: string = 'e794f772ea891c930ef219cc3b24ce15';
+  private API_KEY: string = require('raw-loader!.api');
 
   // Endpoint url.
   private endpoint: string = 'https://api.flickr.com/services/rest';
