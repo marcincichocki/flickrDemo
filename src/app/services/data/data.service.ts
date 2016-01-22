@@ -9,8 +9,7 @@ import {Query} from './Query';
 export class DataService {
 
   // Emit when page is changed.
-  public next: EventEmitter<number> = new EventEmitter();
-  public prev: EventEmitter<number> = new EventEmitter();
+  public changePage: EventEmitter<number> = new EventEmitter();
 
   // Api key.
   private API_KEY: string = 'e794f772ea891c930ef219cc3b24ce15';

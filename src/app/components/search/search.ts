@@ -20,8 +20,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
   };
 
 
-  private prev: Subscription<number> = null;
-  private next: Subscription<number> = null;
+  private changePage: Subscription<number> = null;
 
 
   constructor(private ds: DataService) { }
@@ -35,17 +34,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
 
   ngAfterViewInit() {
-    this.prev = this.ds.prev.subscribe((page) => {
-      this.search({
-        text: this.text || '',
-        tags: this.tags || '',
-        lon: this.lon || 0,
-        lat: this.lat || 0,
-        page
-      });
-    });
-
-    this.next = this.ds.next.subscribe((page) => {
+    this.changePage = this.ds.changePage.subscribe((page) => {
       this.search({
         text: this.text || '',
         tags: this.tags || '',
@@ -57,8 +46,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.prev.unsubscribe();
-    this.next.unsubscribe();
+    this.changePage.unsubscribe();
   }
 
 
